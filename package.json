@@ -47,7 +47,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "test:coverage": "yarn test -- --coverage"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
@@ -57,8 +58,10 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
+      "src/**/*.js",
+      "!src/index.js"
     ],
+    "verbose": true,
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
